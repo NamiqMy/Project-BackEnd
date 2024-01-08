@@ -1,0 +1,25 @@
+﻿@model MiniLayihe.Models.ViewModel;
+
+    
+        <div class="products-catagories-area clearfix">
+            <div class="amado-pro-catagory clearfix">
+
+                @foreach (var item in Model.Products)
+                {
+                    <div class="single-products-catagory clearfix">
+                        <a href="shop.html">
+                            @foreach (var img in item.ProductImages.Take(1))
+                            {
+                                <img src="~/img/@img.ImagePath" alt="">
+                            }
+                            <div class="hover-content">
+                                <div class="line"></div>
+                                <p>From $@item.Price</p>
+                                <h4>@item.Name</h4>
+                            </div>
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+   
